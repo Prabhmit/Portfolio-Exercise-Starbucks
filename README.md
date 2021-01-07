@@ -14,11 +14,11 @@ The code is in Python 3.7.6. The Starbucks.ipynb is a Jupyter notebook. The Pyth
 
 # Project Motivation
 
-The dataset was originally used as a take-home assignment provided by Starbucks for their job candidates. The data for this exercise consists of about 120,000 data points split in a 2:1 ratio among training and test files. In the experiment simulated by the data, an advertising promotion was tested to see if it would bring more customers to purchase a specific product priced at $10. Since it costs the company 0.15 to send out each promotion, it would be best to limit that promotion only to those that are most receptive to the promotion. Each data point includes one column indicating whether or not an individual was sent a promotion for the product, and one column indicating whether or not that individual eventually purchased that product. Each individual also has seven additional features associated with them, which are provided abstractly as V1-V7.
+The dataset was originally used as a take-home assignment provided by Starbucks for their job candidates. The data for this exercise consists of about 120,000 data points split in a 2:1 ratio among training and test files. In the experiment simulated by the data, an advertising promotion was tested to see if it would bring more customers to purchase a specific product priced at $10. Since it costs the company $0.15 to send out each promotion, it would be best to limit that promotion only to those that are most receptive to the promotion. Each data point includes one column indicating whether or not an individual was sent a promotion for the product, and one column indicating whether or not that individual eventually purchased that product. Each individual also has seven additional features associated with them, which are provided abstractly as V1-V7.
 
 ## Optimization Strategy
 
-The goal is to use the training data to understand what patterns in V1-V7 to indicate that a promotion should be provided to a user. Specifically, the goal is to maximize the following metrics:
+The goal is to use the training data to understand patterns in V1-V7 that indicate that a promotion should be provided to a user. Specifically, the goal is to maximize the following metrics:
 
 ### Incremental Response Rate (IRR)
 
@@ -34,27 +34,26 @@ $$ NIR = (10\cdot purch_{treat} - 0.15 \cdot cust_{treat}) - 10 \cdot purch_{ctr
 
 # Project Components and File Descriptions
 
-The datasets are training.csv and Test.csv. The Starbucks.ipynb is a Jupyter notebook which included the relevant Python code for this excercise. test_results.py is a script to test the model output. 
+The datasets are training.csv and Test.csv. The Starbucks.ipynb is a Jupyter notebook which included the relevant Python code for this excercise. test_results.py is a script that uses the Test.csv to test the model output. 
 
 The project has four components: 
 
 ## Inspecting promotion distribution and calculating IRR and NIR
 
-In this component group counts of the train data were calculated and the distribution of customers who were sent the promotion was inspected. IRR and NIR values of the train data were calculated 
+In this component group counts of the train data were calculated and the distribution of customers who were sent the promotion was inspected. IRR and NIR values of the train data were calculated. 
 
 ## Hypothesis testing for IRR 
 
-In this component hypothesis testing using simulation approach for IRR was conducted. As there are two measures (IRR and NIR), the level of significane (5%) was 0.05/2 = 0.025 for both tests under Bonferroni Correction. The p-value for the test on IRR is 0.0. 
-Therefore there is sufficient evidence to prove with 97.5% confidence that IRR is different from 0.
+In this component hypothesis testing using simulation approach for IRR was conducted. As there are two measures (IRR and NIR), the level of significane (5%) was 0.05/2 = 0.025 for both tests under Bonferroni Correction. The p-value for the test on IRR is 0.0. Therefore there is sufficient evidence to prove with 97.5% confidence that IRR is different from 0.
 
 ## Hypothesis testing for NIR 
 
-In this component hypothesis testing using simulation approach for NIR was conducted. The p-value for the test on IRR is 0.0. Therefore there is sufficient evidence to prove with 97.5% confidence that NIR is different from 0. 
+In this component hypothesis testing using simulation approach for NIR was conducted. The p-value for the test on NIR is 0.0. Therefore there is sufficient evidence to prove with 97.5% confidence that NIR is different from 0. 
 
 ## Building promotion strategy model 
 
-X(V1-V7) and y('purchase) variables were created and the data was split into test and train sets with a 2:1 ratio. A pipeline was build using Random Forest and hyper-parameters were tuned using GridSearch. The model was fit to train data following which predictions were made using test data and the model output was evaluated and reported.
-The model output was tested against test_results.py. 
+X(V1-V7) and y('purchase) variables were created and the training data was split into test and train sets with a 2:1 ratio. A pipeline was build using Random Forest and hyper-parameters were tuned using GridSearch. The model was fit to train data following which predictions were made using test data and the model output was evaluated and reported.
+The model output was tested with Test.csv using test_results.py. 
 
 # 4. Instructions
 
