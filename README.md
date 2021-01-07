@@ -34,9 +34,9 @@ NIR = (10 x purchase_treatment - 0.15 x customer_treatment) - 10 x purchase_cont
 
 # Project Components and File Descriptions
 
-The datasets are training.csv and Test.csv. The Starbucks.ipynb is a Jupyter notebook which included the relevant Python code for this excercise. test_results.py is a script that uses the Test.csv to test the model output. 
+The datasets are training.csv and Test.csv. The Starbucks.ipynb is a Jupyter notebook which includes the relevant Python code for this excercise. test_results.py is a script that uses the Test.csv to test the model output. 
 
-The project has four components: 
+The project has five components: 
 
 ## Inspecting promotion distribution and calculating IRR and NIR
 
@@ -55,11 +55,15 @@ In this component hypothesis testing using simulation approach for NIR was condu
 X(V1-V7) and y('purchase) variables were created and the training data was split into test and train sets with a 2:1 ratio. A pipeline was build using Random Forest and hyper-parameters were tuned using GridSearch. The model was fit to train data following which predictions were made using test data and the model output was evaluated and reported.
 The model output was tested with Test.csv using test_results.py. 
 
-# 4. Instructions
+## Results 
 
-1. Run the cells in the Starbucks.ipynb notebook.
+The IRR and NIR achieved with this strategy were 0.0198 and 373.15 respectively. The IRR value, which is positive, indicates that more customers would purchase the product with the promotion as compared to if they didn't receive the promotion. The NIR value, which is positive as well, indicates the promotion strategy will be profitable for Starbucks.  
 
-# 5. Licensing, Authors and Acknowledgments
+# Instructions
+
+Run the cells in the Starbucks.ipynb notebook for the relevant output.
+
+# Licensing, Authors and Acknowledgments
 
 Introduction to Data Science, Data Scientist Nanodegree Program, Udacity, https://www.udacity.com/course/data-scientist-nanodegree--nd025
 
